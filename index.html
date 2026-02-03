@@ -12,7 +12,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             line-height: 1.6;
             color: #1e293b;
         }
@@ -23,7 +23,6 @@
             padding: 0 20px;
         }
         
-        /* Header */
         header {
             background: white;
             padding: 20px 0;
@@ -52,14 +51,15 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s;
+            display: inline-block;
+            transition: all 0.3s;
         }
         
         .cta-button:hover {
             background: #ea580c;
+            transform: translateY(-2px);
         }
         
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             color: white;
@@ -71,9 +71,10 @@
             font-size: 48px;
             margin-bottom: 20px;
             font-weight: 800;
+            line-height: 1.2;
         }
         
-        .hero p {
+        .hero-subtitle {
             font-size: 20px;
             margin-bottom: 30px;
             opacity: 0.95;
@@ -85,6 +86,7 @@
         .hero .cta-button {
             font-size: 18px;
             padding: 16px 32px;
+            margin-top: 10px;
         }
         
         .mockup {
@@ -107,6 +109,10 @@
             border-radius: 8px;
         }
         
+        .mockup-item:last-child {
+            margin-bottom: 0;
+        }
+        
         .mockup-label {
             font-size: 12px;
             color: #64748b;
@@ -117,7 +123,6 @@
             font-size: 14px;
         }
         
-        /* Section Styles */
         section {
             padding: 80px 0;
         }
@@ -131,6 +136,7 @@
             margin-bottom: 20px;
             color: #1e3a8a;
             text-align: center;
+            line-height: 1.3;
         }
         
         .section-intro {
@@ -141,7 +147,6 @@
             color: #475569;
         }
         
-        /* Problem Section */
         .problem-list {
             list-style: none;
             max-width: 700px;
@@ -154,15 +159,15 @@
             font-size: 18px;
         }
         
-        .problem-list li:before {
+        .problem-list li::before {
             content: "✗";
             position: absolute;
             left: 0;
             color: #ef4444;
             font-weight: bold;
+            font-size: 20px;
         }
         
-        /* How It Works */
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -193,9 +198,13 @@
         .step h3 {
             color: #1e3a8a;
             margin-bottom: 10px;
+            font-size: 20px;
         }
         
-        /* Social Proof */
+        .step p {
+            color: #475569;
+        }
+        
         .trade-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -216,12 +225,13 @@
             font-size: 22px;
         }
         
-        .trade-card p {
+        .trade-card > p {
             margin-bottom: 15px;
+            color: #475569;
         }
         
         .stat {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             color: #f97316;
             margin: 20px 0;
@@ -233,6 +243,7 @@
             border-radius: 8px;
             margin-top: 20px;
             font-style: italic;
+            color: #1e293b;
         }
         
         .testimonial-author {
@@ -240,9 +251,9 @@
             font-weight: 600;
             font-style: normal;
             color: #1e3a8a;
+            font-size: 14px;
         }
         
-        /* Differentiators */
         .diff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -250,21 +261,30 @@
             margin-top: 40px;
         }
         
-        .diff-item h3 {
-            color: #1e3a8a;
-            margin-bottom: 10px;
-            font-size: 20px;
+        .diff-item {
+            display: flex;
+            align-items: start;
         }
         
-        .diff-item:before {
+        .diff-item::before {
             content: "✓";
             color: #10b981;
             font-size: 24px;
             font-weight: bold;
             margin-right: 10px;
+            flex-shrink: 0;
         }
         
-        /* Pricing */
+        .diff-content h3 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .diff-content p {
+            color: #475569;
+        }
+        
         .pricing-card {
             background: white;
             max-width: 500px;
@@ -273,6 +293,12 @@
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             text-align: center;
+        }
+        
+        .pricing-card h3 {
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
         
         .price {
@@ -296,6 +322,7 @@
         .features-list li {
             padding: 10px 0;
             font-size: 16px;
+            color: #1e293b;
         }
         
         .guarantee {
@@ -304,13 +331,16 @@
             color: #64748b;
         }
         
-        /* FAQ */
         .faq-item {
             background: white;
             margin-bottom: 20px;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
         
         .faq-item h3 {
@@ -319,7 +349,11 @@
             font-size: 18px;
         }
         
-        /* Final CTA */
+        .faq-item p {
+            color: #475569;
+            line-height: 1.6;
+        }
+        
         .final-cta {
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             color: white;
@@ -343,26 +377,36 @@
             opacity: 0.8;
         }
         
-        /* Footer */
         footer {
             background: #1e293b;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
             }
             
-            .hero p {
+            .hero-subtitle {
                 font-size: 16px;
             }
             
             h2 {
                 font-size: 28px;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .trade-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .diff-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -380,7 +424,7 @@
     <section class="hero">
         <div class="container">
             <h1>Never Miss Another Emergency Call.</h1>
-            <p>Complete lead capture system for Ventura County roofers, plumbers, and electricians. We handle the calls you miss. You book the jobs.</p>
+            <p class="hero-subtitle">Complete lead capture system for Ventura County roofers, plumbers, and electricians. We handle the calls you miss. You book the jobs.</p>
             <a href="https://calendly.com/your-booking-link" class="cta-button">Book My Free Demo</a>
             
             <div class="mockup">
@@ -405,7 +449,7 @@
             <h2>Ventura County's Extreme Weather Conditions Create Emergency Call Surges. And Customers Won't Wait.</h2>
             <p class="section-intro">You're up on a roof, inside a crawlspace, or finishing a panel upgrade. Your phone is blowing up with emergency calls — heat waves, Santa Ana winds, burst pipes, electrical failures. One crisis event and suddenly everyone in the county needs help at the same time. By the time you're done and call people back, they've already booked your competitor.</p>
             
-            <p class="section-intro" style="font-weight: 600; font-size: 20px;">Here's what's costing you $50k–$70k a year:</p>
+            <p class="section-intro" style="font-weight: 600; font-size: 20px; margin-top: 30px;">Here's what's costing you $50k–$70k a year:</p>
             
             <ul class="problem-list">
                 <li>60% of customers hang up if you don't answer and call the next contractor</li>
@@ -492,23 +536,31 @@
             
             <div class="diff-grid">
                 <div class="diff-item">
-                    <h3>Built for Ventura County's Extreme Conditions</h3>
-                    <p>We understand your market. 90°F+ days are increasing, Santa Ana winds hit 60+ MPH, and emergencies don't wait for business hours.</p>
+                    <div class="diff-content">
+                        <h3>Built for Ventura County's Extreme Conditions</h3>
+                        <p>We understand your market. 90°F+ days are increasing, Santa Ana winds hit 60+ MPH, and emergencies don't wait for business hours.</p>
+                    </div>
                 </div>
                 
                 <div class="diff-item">
-                    <h3>No Long-Term Contracts</h3>
-                    <p>Month-to-month. Cancel anytime. We earn your business every month.</p>
+                    <div class="diff-content">
+                        <h3>No Long-Term Contracts</h3>
+                        <p>Month-to-month. Cancel anytime. We earn your business every month.</p>
+                    </div>
                 </div>
                 
                 <div class="diff-item">
-                    <h3>Set Up in 48 Hours</h3>
-                    <p>Fast deployment. You'll start capturing missed calls this week, not next quarter.</p>
+                    <div class="diff-content">
+                        <h3>Set Up in 48 Hours</h3>
+                        <p>Fast deployment. You'll start capturing missed calls this week, not next quarter.</p>
+                    </div>
                 </div>
                 
                 <div class="diff-item">
-                    <h3>We Handle Everything</h3>
-                    <p>No software to master. We set it up, you just book more jobs.</p>
+                    <div class="diff-content">
+                        <h3>We Handle Everything</h3>
+                        <p>No software to master. We set it up, you just book more jobs.</p>
+                    </div>
                 </div>
             </div>
         </div>
